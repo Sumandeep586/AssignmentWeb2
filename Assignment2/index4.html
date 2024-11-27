@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            #box {
+                width: 200px;
+                height: 200px;
+                padding: 20px;
+                border: 5px solid navy;
+                margin: 20px;
+                background-color: pink;
+                transition: all 0.5s ease;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">CSS Box Model</div>
+
+    <script>
+        const box = document.getElementById('box');
+
+        box.addEventListener('click', function() {
+            box.style.backgroundColor = getRandomColor();
+        });
+
+        box.addEventListener('mouseover', function() {
+            box.style.borderColor = getRandomColor();
+        });
+
+        box.addEventListener('mouseout', function() {
+            box.style.borderColor = 'black';
+        });
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+    </body>
+</html>

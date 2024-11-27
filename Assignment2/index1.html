@@ -1,0 +1,27 @@
+<html>
+<head>
+
+</head>
+<body>
+<script> 
+function calculateArea(width, height) {
+    function isPositiveNumber(value) {
+        return typeof value === 'number' && value > 0;
+    }
+    while (!isPositiveNumber(width) || !isPositiveNumber(height)) {
+        console.log("Please enter positive numbers for width and height.");
+        width = parseFloat(prompt("Enter a positive number for width;"));
+        height = parseFloat(prompt("Enter a positive number for height;"));
+    }
+    const area = width * height;
+    console.log(`The area of the rectangle is ${area}`);
+    
+    return area;
+}
+calculateArea(5,3);
+calculateArea(10,7);
+calculateArea();
+
+</script>
+</body>
+</html>

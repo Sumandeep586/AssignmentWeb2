@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            li {
+                background-color:pink;
+                margin: 5px 0;
+                margin-top: 15%;
+                padding: 10px;
+                text-align: center;
+                width: 200px;
+                font-size: xx-large;
+                width: 300px;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="myList">
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+        </ul>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const ul = document.getElementById('myList');
+                const newItem = document.createElement('li');
+                newItem.textContent = 'Fourth item';
+                ul.appendChild(newItem);
+
+                ul.addEventListener('click', function(event) {
+                    if (event.target.tagName === 'LI') {
+                        event.target.textContent = getRandomString();
+                    }
+                });
+
+                function getRandomString() {
+                    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()~';
+                    let result = '';
+                    for (let i = 0; i < 10; i++) {
+                        result += chars.charAt(Math.floor(Math.random() * chars.length));
+                    }
+                    return result;
+                }
+            });
+        </script>
+    </body>
+</html>
